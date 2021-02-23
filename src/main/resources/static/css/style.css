@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+h1{
+	text-align: center;
+}
+
+.form-div{
+	display: flex;
+	border: 1px solid black;
+	justify-content: center;
+	padding: 16px;
+	align-content: center;
+	align-items: center;
+	margin-left: 650px;
+	margin-right: 650px;
+	height: 350px;
+}
+
+.register-form{
+	
+}
+
+.form-field{
+	padding: 7px;
+}
+
+.errors{
+	text-align: center;
+	color: red;
+}
+
+.login-form-div{
+	display: flex;
+	flex-direction: coloumn;
+	border: 1px solid black;
+	justify-content: center;
+	padding: 16px;
+	align-content: center;
+	align-items: center;
+	margin-left: 850px;
+	margin-right: 850px;
+	height: 350px;
+}
+
+.btn{
+	height: 35px;
+	width: 150px;
+	background-color: white;
+	border: 1px solid orange;
+	border-radius: 5px;
+	margin-left: 33px;
+}
+
+.btn:hover{
+	height: 35px;
+	width: 150px;
+	background-color: orange;
+	border: 1px solid orange;
+	border-radius: 5px;
+	color: white;
+	margin-left: 33px;
+}
+
+.register-btn{
+	height: 35px;
+	width: 150px;
+	background-color: white;
+	border: 1px solid lightblue;
+	border-radius: 5px;
+	margin-left: 33px;
+}
+
+.register-btn:hover{
+	height: 35px;
+	width: 150px;
+	background-color: lightblue;
+	border: 1px solid orange;
+	border-radius: 5px;
+	color: white;
+	margin-left: 33px;
+}
