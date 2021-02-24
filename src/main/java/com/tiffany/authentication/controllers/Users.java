@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.tiffany.authentication.models.User;
 import com.tiffany.authentication.services.UserService;
@@ -48,7 +49,7 @@ public class Users {
     	
     	userValidator.validate(user, result);
     	
-        if(result.hasErrors()) {
+        if (result.hasErrors()) {
             return "registrationPage.jsp";
         }
         User u = userService.registerUser(user);
@@ -57,18 +58,23 @@ public class Users {
     }
     
     @RequestMapping(value="/login", method=RequestMethod.POST)
-    public String loginUser(@RequestParam("email") String email, @RequestParam("password") String password, Model model, HttpSession session) {
+    public String loginUser(@RequestParam("email") String email, 
+    						@RequestParam("password") String password, 
+    						Model model, HttpSession session, 
+    						RedirectAttributes flash) {
         // if the user is authenticated, save their user id in session
         // else, add error messages and return the login page
     	
     	boolean isAuthenticated = userService.authenticateUser(email, password);
     	if (isAuthenticated) {
-    		User u = userService.findByEmail(email);
-    		session.setAttribute("userId", u.getId());
+    		User thisUser = userService.findByEmail(email);
+    		session.setAttribute("userId", thisUser.getId());
     		return "redirect:/home";
     	} else {
-    		model.addAttribute("error", "Invalid credentials, please try again.");
-    		return "loginPage.jsp";
+    		flash.addFlashAttribute("error", "Invalid credentials, please try again.");
+    		return "redirect:/login";
+//    		model.addAttribute("error", "Invalid credentials, please try again.");
+//    		return "loginPage.jsp";
     	}
     }
     

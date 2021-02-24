@@ -11,7 +11,12 @@
     <title>Login Page</title>
 </head>
 <body>
-    <h1>Login</h1>
+	<div class="top-bar">
+		<p></p>
+		<h1>Login</h1>
+		<p><a class="register-link" href="/registration">Register Here!</a></p>
+	</div>
+    
     <p class="errors"><c:out value="${error}" /></p>
     
     <div class="login-form-div">

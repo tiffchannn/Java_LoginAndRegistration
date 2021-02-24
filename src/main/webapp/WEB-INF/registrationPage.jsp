@@ -11,7 +11,12 @@
     <title>Registration Page</title>
 </head>
 <body>
-    <h1>Register!</h1>
+	<div class="top-bar">
+		<p></p>
+		<h1>Register</h1>
+		<p><a class="login-link" href="/login">Login Here!</a></p>
+	</div>
+    
     <p class="errors"><form:errors path="user.*"/></p>
     
     <div class="form-div">

@@ -11,8 +11,10 @@
 	<title>Welcome</title>
 </head>
 <body>
-	<h1>Welcome, <c:out value="${user.email}" />!</h1>
-	<a href="/logout">Logout</a>
+	<div class="container">
+		<h1>Welcome, <c:out value="${user.email}" />!</h1>
+		<a class="logout-link" href="/logout">Logout</a>
+	</div>
 	
 	
 </body>
